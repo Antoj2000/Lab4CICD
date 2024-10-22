@@ -35,5 +35,16 @@ public class ProductService {
      return myList;
     }
 
+    public List<Product> deleteProduct(@PathVariable String id) {
+        for (Product product : myList) { // runs through each entry into array
+            if (product.getId().equals(id)) {
+                myList.remove(product);
+                break;
+            }
+        }
+        return myList;
+    }
+
+
 
 }
