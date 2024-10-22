@@ -21,22 +21,19 @@ public class ProductController {
     @PostMapping
     public List<Product> newProduct(@RequestBody Product product)
     {
-        //Send it to do business logic
-        ProductService myService = new ProductService();
-        list = myService.addProduct(product);
-        return list;
+        return myService.addProduct(product);
     }
 
     @GetMapping
     public List<Product> getAllProducts(){
-        return list;
+
+        return myService.getAllProducts();
     }
 
     @PutMapping("/{id}")
     List<Product> updateProduct(@PathVariable String id , @RequestBody Product updatedProduct){
-        ProductService myService = new ProductService();
-        list = myService.updateProduct(id, updatedProduct);
-        return list;
+
+        return myService.updateProduct(id, updatedProduct);
 
     }
 

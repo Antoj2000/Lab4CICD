@@ -20,6 +20,7 @@ public class ProductService {
     }
 
     public List<Product> getAllProducts() {
+
         return myList;
     }
 
@@ -28,10 +29,8 @@ public class ProductService {
             if (product.getId().equals(id)) {   //checks id
                 product.setName(updatedProduct.getName());  //updates each detail of product
                 product.setPrice(updatedProduct.getPrice());
-
+                break;
             }
-            return myList;
-
         }
      return myList;
     }
