@@ -1,12 +1,12 @@
 package ie.atu.lab4;
 
 
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
 import org.springframework.validation.annotation.Validated;
 
 
@@ -22,6 +22,6 @@ public class Product {
     private String name;
 
 
-
+    @Positive(message = "Price must be a positive number")
     private double price;
 }
